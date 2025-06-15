@@ -1,63 +1,78 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19707750&assignment_repo_type=AssignmentRepo)
-# Express.js RESTful API Assignment
+# 🛠️ Products REST API
 
-This assignment focuses on building a RESTful API using Express.js, implementing proper routing, middleware, and error handling.
+This project is a RESTful API built with Node.js and Express.js that allows users to manage a list of products. The API supports standard CRUD operations, middleware functionality, error handling, search, filtering, and pagination.
 
-## Assignment Overview
 
-You will:
-1. Set up an Express.js server
-2. Create RESTful API routes for a product resource
-3. Implement custom middleware for logging, authentication, and validation
-4. Add comprehensive error handling
-5. Develop advanced features like filtering, pagination, and search
+## 🚀 Getting Started
 
-## Getting Started
+### Prerequisites
+- Node.js and npm must be installed on your machine.
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install dependencies:
-   ```
-   npm install
-   ```
-4. Run the server:
-   ```
-   npm start
-   ```
+### Installation
+1. Clone or download the repository.
+2. Navigate to the project directory.
+3. Run `npm install` to install dependencies.
 
-## Files Included
+### Configuration
+- Create a `.env` file in the root directory.
+- Copy the content from `.env.example` into `.env` and provide actual values.
 
-- `Week2-Assignment.md`: Detailed assignment instructions
-- `server.js`: Starter Express.js server file
-- `.env.example`: Example environment variables file
+### Running the Server
+- To start the server in development mode with hot reload, use: `npm run dev`
+- To start the server normally, use: `npm start`
 
-## Requirements
+The server will start and listen on the port specified in your `.env` file.
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Postman, Insomnia, or curl for API testing
 
-## API Endpoints
+## 📚 API Endpoints
 
-The API will have the following endpoints:
+All endpoints are prefixed with `/api/products`.
 
-- `GET /api/products`: Get all products
-- `GET /api/products/:id`: Get a specific product
-- `POST /api/products`: Create a new product
-- `PUT /api/products/:id`: Update a product
-- `DELETE /api/products/:id`: Delete a product
+### `GET /api/products`
+- Fetches all products.
+- Supports query parameters for filtering by category, pagination, and limiting items per page.
 
-## Submission
+### `GET /api/products/:id`
+- Fetches a single product by its unique ID.
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+### `POST /api/products`
+- Creates a new product.
+- Requires JSON body and API key in request headers.
 
-1. Complete all the required API endpoints
-2. Implement the middleware and error handling
-3. Document your API in the README.md
-4. Include examples of requests and responses
+### `PUT /api/products/:id`
+- Updates an existing product by its ID.
+- Requires JSON body and API key in request headers.
 
-## Resources
+### `DELETE /api/products/:id`
+- Deletes a product by ID.
+- Requires API key in request headers.
 
-- [Express.js Documentation](https://expressjs.com/)
-- [RESTful API Design Best Practices](https://restfulapi.net/)
-- [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) 
+### `GET /api/products/search`
+- Searches for products by name using a query parameter.
+
+### `GET /api/products/stats/category-count`
+- Returns the total number of products grouped by category.
+
+
+## 🔐 Authentication
+
+Some routes (`POST`, `PUT`, `DELETE`) are protected and require an API key to be included in the request headers.
+
+
+## ❌ Error Handling
+
+Errors are returned in a structured format with appropriate HTTP status codes. Custom error types like `NotFoundError` and `ValidationError` are used to handle specific scenarios. Asynchronous operations are wrapped using `try/catch` or error-handling middleware.
+
+
+## 👥 Collaboration & Contact
+
+Feel free to fork the repository, contribute, or raise issues.
+
+For collaboration, suggestions, or inquiries, please contact:  
+**Email:** yourname@example.com  
+**GitHub:** [github.com/AneleMucavele](https://github.com/AneleMucavele)
+
+
+## 👤 Author
+
+This project was developed for educational purposes to demonstrate backend development using Express.js.
