@@ -69,7 +69,7 @@ Errors are returned in a structured format with appropriate HTTP status codes. C
 Feel free to fork the repository, contribute, or raise issues.
 
 For collaboration, suggestions, or inquiries, please contact:  
-**Email:** yourname@example.com  
+**Email:** yolandaanele81@gmail.com 
 **GitHub:** [github.com/AneleMucavele](https://github.com/AneleMucavele)
 
 
