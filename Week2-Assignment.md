@@ -1,74 +1,79 @@
-# 🚂 Week 2: Express.js – Server-Side Framework
+# 🛠️ Products REST API
 
-## 🚀 Objective
-Build a RESTful API using Express.js that implements standard CRUD operations, proper routing, middleware implementation, and error handling.
+This project is a RESTful API built with Node.js and Express.js that allows users to manage a list of products. The API supports standard CRUD operations, middleware functionality, error handling, search, filtering, and pagination.
 
-## 📂 Tasks
 
-### Task 1: Express.js Setup
-- Initialize a new Node.js project
-- Install Express.js and required dependencies
-- Create a basic Express server that listens on port 3000
-- Implement a "Hello World" route at the root endpoint
+## 🚀 Getting Started
 
-### Task 2: RESTful API Routes
-- Create a resource called `products` with the following fields:
-  - `id` (unique identifier)
-  - `name` (string)
-  - `description` (string)
-  - `price` (number)
-  - `category` (string)
-  - `inStock` (boolean)
-- Implement the following RESTful routes:
-  - `GET /api/products`: List all products
-  - `GET /api/products/:id`: Get a specific product by ID
-  - `POST /api/products`: Create a new product
-  - `PUT /api/products/:id`: Update an existing product
-  - `DELETE /api/products/:id`: Delete a product
+### Prerequisites
+- Node.js and npm must be installed on your machine.
 
-### Task 3: Middleware Implementation
-- Create a custom logger middleware that logs the request method, URL, and timestamp
-- Implement a middleware to parse JSON request bodies
-- Create an authentication middleware that checks for an API key in the request headers
-- Add validation middleware for the product creation and update routes
+### Installation
+1. Clone or download the repository.
+2. Navigate to the project directory.
+3. Run `npm install` to install dependencies.
 
-### Task 4: Error Handling
-- Implement global error handling middleware
-- Create custom error classes for different types of errors (e.g., NotFoundError, ValidationError)
-- Add proper error responses with appropriate HTTP status codes
-- Handle asynchronous errors using try/catch blocks or a wrapper function
+### Configuration
+- Create a `.env` file in the root directory.
+- Copy the content from `.env.example` into `.env` and provide actual values.
 
-### Task 5: Advanced Features
-- Implement query parameters for filtering products by category
-- Add pagination support for the product listing endpoint
-- Create a search endpoint that allows searching products by name
-- Implement route for getting product statistics (e.g., count by category)
+### Running the Server
+- To start the server in development mode with hot reload, use: `npm run dev`
+- To start the server normally, use: `npm start`
 
-## 🧪 Expected Outcome
-- A fully functional Express.js API with proper RESTful routes
-- Well-structured middleware for logging, authentication, and validation
-- Comprehensive error handling with appropriate status codes and messages
-- Advanced features like filtering, pagination, and search
+The server will start and listen on the port specified in your `.env` file.
 
-## 🛠️ Setup
-1. Make sure you have Node.js installed (v18 or higher recommended)
-2. Use the provided `server.js` file as a starting point
-3. Install the required dependencies:
-   ```
-   npm install express body-parser uuid
-   ```
-4. For testing your API, you can use tools like Postman, Insomnia, or curl
 
-## ✅ Submission Instructions
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Add the following files to your repository:
-   - All your project files (server.js, routes, middleware, etc.)
-   - A `README.md` file with:
-     - Instructions on how to run your server
-     - Documentation of your API endpoints
-     - Examples of requests and responses
-   - A `.env.example` file showing required environment variables
-4. Commit and push your changes to GitHub
-5. Your submission will be automatically graded based on the criteria in the autograding configuration
-6. The instructor will review your submission after the autograding is complete 
+## 📚 API Endpoints
+
+All endpoints are prefixed with `/api/products`.
+
+### `GET /api/products`
+- Fetches all products.
+- Supports query parameters for filtering by category, pagination, and limiting items per page.
+
+### `GET /api/products/:id`
+- Fetches a single product by its unique ID.
+
+### `POST /api/products`
+- Creates a new product.
+- Requires JSON body and API key in request headers.
+
+### `PUT /api/products/:id`
+- Updates an existing product by its ID.
+- Requires JSON body and API key in request headers.
+
+### `DELETE /api/products/:id`
+- Deletes a product by ID.
+- Requires API key in request headers.
+
+### `GET /api/products/search`
+- Searches for products by name using a query parameter.
+
+### `GET /api/products/stats/category-count`
+- Returns the total number of products grouped by category.
+
+
+
+## 🔐 Authentication
+
+Some routes (`POST`, `PUT`, `DELETE`) are protected and require an API key to be included in the request headers.
+
+
+
+## ❌ Error Handling
+
+Errors are returned in a structured format with appropriate HTTP status codes. Custom error types like `NotFoundError` and `ValidationError` are used to handle specific scenarios. Asynchronous operations are wrapped using `try/catch` or error-handling middleware.
+
+## 👥 Collaboration & Contact
+
+Feel free to fork the repository, contribute, or raise issues.
+
+For collaboration, suggestions, or inquiries, please contact:  
+**Email:** yolandaanele81@gmail.com  
+**GitHub:** [github.com/AneleMucavele](https://github.com/AneleMucavele)
+
+
+## 👤 Author
+
+This project was developed for educational purposes to demonstrate backend development using Express.js.
